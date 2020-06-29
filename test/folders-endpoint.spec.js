@@ -7,7 +7,7 @@ const { makeFoldersArray } = require('./folders.fixtures');
 describe('Folders Endpoints', function () {
   let db;
   before(() => {
-    db = knex({ client: 'pg', connection: process.env.TEST_DB_URL });
+    db = knex({ client: 'pg', connection: process.env.TEST_DATABASE_URL });
   });
   before(() => db.raw('TRUNCATE folders, notes RESTART IDENTITY CASCADE'));
   afterEach(() => db.raw('TRUNCATE folders, notes RESTART IDENTITY CASCADE'));
